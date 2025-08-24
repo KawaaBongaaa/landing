@@ -31,3 +31,8 @@ To sync with a Pinterest board, run the Node script below locally and commit the
 
 > Due to Pinterest/CORS, real‑time client‑side scraping is not possible on static hosting without a proxy. The above keeps the site static and SEO‑friendly.
 
+
+
+### Fixes applied
+- Language dropdown closed by default; browser language auto-detection added.
+- If gallery JSON files are missing the page shows demo images and a small notice explaining how to populate them.
