@@ -1,167 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>AI Image Generator — pixPLace</title>
-  <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="icon" href="/favicon.ico">
-<meta name="theme-color" content="#0b0f1a">
-<meta name="description" content="pixPLace — next‑gen AI image generator. Create, upscale, and stylize visuals with cutting‑edge models.">
-<link rel="preconnect" href="https://assets.pinterest.com">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="alternate" hreflang="x-default" href="./index.html">
-<link rel="alternate" hreflang="en" href="./index.html">
-<link rel="alternate" hreflang="ru" href="./ru/index.html">
-<link rel="alternate" hreflang="es" href="./es/index.html">
-<link rel="alternate" hreflang="de" href="./de/index.html">
-<link rel="alternate" hreflang="fr" href="./fr/index.html">
-<link rel="alternate" hreflang="it" href="./it/index.html">
-<link rel="alternate" hreflang="pt" href="./pt/index.html">
-<link rel="alternate" hreflang="ja" href="./ja/index.html">
-<link rel="alternate" hreflang="zh" href="./zh/index.html">
-<script src="https://cdn.tailwindcss.com"></script>
-<script defer src="https://js.stripe.com/v3/"></script>
-<script defer src="./js/config.js"></script>
-<script defer src="./js/main.js"></script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  "name": "pixPLace",
-  "applicationCategory": "CreativeWorkApplication",
-  "operatingSystem": "Web",
-  "description": "AI image generator with styles, upscaling, background removal and batch rendering.",
-  "offers": {"@type": "Offer","priceCurrency": "USD","price": "9.00"},
-  "brand": {"@type": "Brand","name": "pixPLace"}
-}
-</script>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="pixPLace - AI Image Generation Platform">
+  <title>pixPLace - AI Image Generation</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="bg-slate-950 text-slate-100">
-  <header class="border-b border-white/10 sticky top-0 backdrop-blur bg-slate-950/70 z-50">
-    <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
-      <a href="../index.html" class="text-xl font-bold tracking-tight">pixPLace</a>
-      <nav class="flex items-center gap-2">
-        <a class="px-3 py-1.5 rounded-xl hover:bg-white/10" href="#features">Features</a>
-        <a class="px-3 py-1.5 rounded-xl hover:bg-white/10" href="#pricing">Pricing</a>
-        <a class="px-3 py-1.5 rounded-xl hover:bg-white/10" href="#gallery">Gallery</a>
-        <a class="px-3 py-1.5 rounded-xl hover:bg-white/10" href="#faq">FAQ</a>
-        <div class="relative">
-          <select class="bg-slate-900 border border-white/10 rounded-xl px-3 py-1.5" onchange="location.href=this.value">
-            <option value="../index.html">EN</option>
-            <option value="../ru/index.html">RU</option>
-            <option value="../es/index.html">ES</option>
-            <option value="../de/index.html">DE</option>
-            <option value="../fr/index.html">FR</option>
-            <option value="../it/index.html">IT</option>
-            <option value="../pt/index.html">PT</option>
-            <option value="../ja/index.html">JA</option>
-            <option value="../zh/index.html">ZH</option>
-          </select>
-        </div>
-      </nav>
-    </div>
+<body>
+  <header>
+    <h1>pixPLace</h1>
+    <p>Innovative AI-powered image generation platform</p>
   </header>
 
-  <main>
-    <section class="relative overflow-hidden">
-      <div class="max-w-7xl mx-auto px-4 pt-16 pb-12 grid md:grid-cols-2 gap-10 items-center">
-        <div>
-          <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight">Create stunning images with AI.</h1>
-          <p class="mt-4 text-lg text-slate-300">Generate, stylize, and upscale images with uncompromising speed. Seamless prompts, presets and batch rendering for creators and teams.</p>
-          <div class="mt-6 flex gap-3">
-            <a href="#pricing" class="px-5 py-3 rounded-2xl bg-white text-slate-900 font-semibold">Start now</a>
-            <a href="#gallery" class="px-5 py-3 rounded-2xl border border-white/20">Explore Gallery</a>
-          </div>
-          <ul class="mt-6 grid grid-cols-2 gap-3 text-sm text-slate-300">
-            <li>⚡ Fast inference</li><li>🎛️ Style presets</li><li>🖼️ Upscale x4</li><li>🧽 BG removal</li>
-          </ul>
-        </div>
-        <div class="rounded-3xl border border-white/10 p-2 bg-white/5">
-          <div class="aspect-[16/10] rounded-2xl bg-gradient-to-br from-fuchsia-600/30 via-sky-500/20 to-teal-400/20"></div>
-        </div>
-      </div>
-    </section>
+  <section id="gallery">
+    <h2>AI Art Gallery</h2>
+    <div class="carousel" id="carousel"></div>
+  </section>
 
-    <section id="features" class="py-12 border-t border-white/10">
-      <div class="max-w-7xl mx-auto px-4">
-        <h2 class="text-3xl font-bold">Why pixPLace</h2>
-        <div class="mt-6 grid md:grid-cols-3 gap-6">
-          <div class="rounded-2xl bg-white/5 border border-white/10 p-6"><h3 class="font-semibold">Studio‑grade quality</h3><p class="mt-2 text-slate-300">State‑of‑the‑art models tuned for clarity, color and detail.</p></div><div class="rounded-2xl bg-white/5 border border-white/10 p-6"><h3 class="font-semibold">Workflow speed</h3><p class="mt-2 text-slate-300">Batch prompts, presets and history to keep you in flow.</p></div><div class="rounded-2xl bg-white/5 border border-white/10 p-6"><h3 class="font-semibold">Own your assets</h3><p class="mt-2 text-slate-300">Commercial license and watermark‑free exports.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <section id="gallery" class="py-12 border-t border-white/10">
-      <div class="max-w-7xl mx-auto px-4">
-        <div class="flex items-end justify-between">
-          <h2 class="text-3xl font-bold">Live Galleries</h2>
-          <a class="text-sky-300 underline" href="https://www.pinterest.com/" target="_blank" rel="noreferrer">Powered by Pinterest</a>
-        </div>
-        <p class="text-slate-300 mt-2">Boards auto‑update. To change boards, edit <code>js/config.js</code>.</p>
-        <div id="pinterest-boards" class="mt-6"></div>
-        <script>document.addEventListener('DOMContentLoaded',()=>window.pixplace&&window.pixplace.renderBoards('pinterest-boards'));</script>
-      </div>
-    </section>
-
-    <section id="pricing" class="py-12 border-t border-white/10">
-      <div class="max-w-7xl mx-auto px-4">
-        <h2 class="text-3xl font-bold">Pricing</h2>
-        <div class="mt-6 grid md:grid-cols-3 gap-6">
-          <div class="rounded-2xl bg-white/5 border border-white/10 p-6">
-            <h3 class="font-semibold">Starter</h3>
-            <p class="text-slate-300 mt-1">100 images / mo</p>
-            <div class="text-3xl font-bold mt-4">$9</div>
-            <button onclick="pixplace.buy()" class="mt-4 w-full px-4 py-2 rounded-xl bg-white text-slate-900 font-semibold">Subscribe</button>
-          </div>
-          <div class="rounded-2xl bg-white/5 border border-white/10 p-6">
-            <h3 class="font-semibold">Pro</h3>
-            <p class="text-slate-300 mt-1">1,000 images / mo</p>
-            <div class="text-3xl font-bold mt-4">$29</div>
-            <button onclick="pixplace.buy()" class="mt-4 w-full px-4 py-2 rounded-xl bg-white text-slate-900 font-semibold">Subscribe</button>
-          </div>
-          <div class="rounded-2xl bg-white/5 border border-white/10 p-6">
-            <h3 class="font-semibold">Studio</h3>
-            <p class="text-slate-300 mt-1">Unlimited team seats</p>
-            <div class="text-3xl font-bold mt-4">$99</div>
-            <button onclick="pixplace.buy()" class="mt-4 w-full px-4 py-2 rounded-xl bg-white text-slate-900 font-semibold">Subscribe</button>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="lead" class="py-12 border-t border-white/10">
-      <div class="max-w-3xl mx-auto px-4">
-        <h2 class="text-3xl font-bold text-center">Get early access</h2>
-        <form id="lead-form" class="mt-6 grid md:grid-cols-[1fr,1fr,auto] gap-3">
-          <input name="email" type="email" placeholder="Email" required class="px-4 py-3 rounded-2xl bg-slate-900 border border-white/10">
-          <input name="telegram" type="text" placeholder="@telegram" class="px-4 py-3 rounded-2xl bg-slate-900 border border-white/10">
-          <button class="px-5 py-3 rounded-2xl bg-white text-slate-900 font-semibold">Join</button>
-        </form>
-        <script>document.addEventListener('DOMContentLoaded',()=>window.pixplace&&window.pixplace.setupLeadForm('lead-form'));</script>
-        <p class="text-slate-400 text-sm mt-3 text-center">We respect your inbox. Unsubscribe anytime.</p>
-      </div>
-    </section>
-
-    <section id="faq" class="py-12 border-t border-white/10">
-      <div class="max-w-5xl mx-auto px-4">
-        <h2 class="text-3xl font-bold">FAQ</h2>
-        <div class="mt-6 grid gap-4">
-          <details class="rounded-2xl bg-white/5 border border-white/10 p-4"><summary class="cursor-pointer font-semibold">What models do you use?</summary><p class="mt-2 text-slate-300">We run a blend of diffusion and transformer backbones optimized for speed and quality.</p></details><details class="rounded-2xl bg-white/5 border border-white/10 p-4"><summary class="cursor-pointer font-semibold">Can I use images commercially?</summary><p class="mt-2 text-slate-300">Yes. Paid plans include a commercial license.</p></details><details class="rounded-2xl bg-white/5 border border-white/10 p-4"><summary class="cursor-pointer font-semibold">Do you offer API access?</summary><p class="mt-2 text-slate-300">Yes, contact us for beta access.</p></details>
-      </div>
-    </section>
-  </main>
-
-  <footer class="border-t border-white/10 py-8">
-    <div class="max-w-7xl mx-auto px-4 flex flex-wrap items-center justify-between gap-4 text-slate-400 text-sm">
-      <div>© AI Image Generator · pixPLace · All rights reserved</div>
-      <nav class="flex items-center gap-4">
-        <a href="../privacy.html" class="hover:text-white">Privacy</a>
-        <a href="../terms.html" class="hover:text-white">Terms</a>
-        <a href="#lead" class="hover:text-white">Contact</a>
-      </nav>
-    </div>
+  <footer>
+    <p>© 2025 pixPLace. All rights reserved.</p>
   </footer>
+
+  <script src="js/gallery.js"></script>
 </body>
 </html>
