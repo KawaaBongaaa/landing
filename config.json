@@ -5,12 +5,17 @@
     "en",
     "ru",
     "es",
-    "de",
     "fr",
-    "it",
-    "pt",
+    "de",
+    "zh",
+    "pt-br",
+    "ar",
+    "hi",
     "ja",
-    "zh"
+    "it",
+    "ko",
+    "tr",
+    "pl"
   ],
   "lead": {
     "mailto": "hello@example.com",
@@ -21,6 +26,10 @@
   },
   "gallery": {
     "board": "https://www.pinterest.com/888k_ideas/sticker-logo-wallpaper-art-posters-clipart/",
-    "dataFile": "gallery.json"
+    "dataFile": "gallery.json",
+    "mainBoard": "https://www.pinterest.com/888k_ideas/to-print/",
+    "altBoard": "https://www.pinterest.com/888k_ideas/sticker-logo-wallpaper-art-posters-clipart/",
+    "dataFileMain": "gallery.json",
+    "dataFileAlt": "gallery_alt.json"
   }
 }

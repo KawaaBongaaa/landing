@@ -1,66 +1,55 @@
 
-async function loadGallery() {
-  try {
-    const res = await fetch('gallery.json',{cache:'no-store'});
+async function loadGalleries(){
+  const cfg = await fetch('config.json').then(r=>r.json()).catch(()=>null);
+  const mainFile = (cfg && cfg.gallery && cfg.gallery.dataFileMain) ? cfg.gallery.dataFileMain : 'gallery.json';
+  const altFile = (cfg && cfg.gallery && cfg.gallery.dataFileAlt) ? cfg.gallery.dataFileAlt : 'gallery_alt.json';
+
+  // load main gallery (masonry)
+  try{
+    const res = await fetch(mainFile + '?t=' + Date.now(), {cache:'no-store'});
     const items = await res.json();
-    const track = document.querySelector('.carouselTrack');
-    if (!track) return;
-
-    // Shuffle for randomness
-    const shuffled = items.slice().sort(() => Math.random() - .5);
-
-    // Build slides
-    for (const it of shuffled) {
-      const card = document.createElement('div');
-      card.className = 'carouselItem';
-      const img = document.createElement('img');
-      img.loading = 'lazy';
-      img.decoding = 'async';
-      img.src = it.url;
-      const title = it.title || '';
-      const desc = it.description || '';
-      img.alt = title || desc || 'pixPLace artwork';
-      img.title = title || desc || 'pixPLace artwork';
-      const cap = document.createElement('div');
-      cap.className = 'caption';
-      cap.textContent = title || desc || '';
-      card.appendChild(img);
-      card.appendChild(cap);
-      track.appendChild(card);
+    const grid = document.getElementById('gallery-grid') || document.querySelector('.masonry');
+    if(grid && items && items.length){
+      // clear
+      grid.innerHTML='';
+      // shuffle to vary layout
+      const shuffled = items.slice().sort(()=>Math.random()-0.5);
+      shuffled.forEach((it, idx) => {
+        const img = document.createElement('img');
+        img.src = it.url;
+        img.alt = it.title || it.description || 'pixPLace artwork';
+        img.loading = 'lazy';
+        // occasionally make tall images for tetris feel
+        if(idx % 7 === 0) img.style.height = '520px';
+        else if(idx % 5 === 0) img.style.height = '360px';
+        else img.style.height = '260px';
+        grid.appendChild(img);
+      });
     }
+  }catch(e){ console.warn('Main gallery load failed', e); }
 
-    // Duplicate slides to ensure seamless infinite scroll
-    for (const it of shuffled) {
-      const card = document.createElement('div');
-      card.className = 'carouselItem';
-      const img = document.createElement('img');
-      img.loading = 'lazy';
-      img.decoding = 'async';
-      img.src = it.url;
-      const title = it.title || '';
-      const desc = it.description || '';
-      img.alt = title || desc || 'pixPLace artwork';
-      img.title = title || desc || 'pixPLace artwork';
-      const cap = document.createElement('div');
-      cap.className = 'caption';
-      cap.textContent = title || desc || '';
-      card.appendChild(img);
-      card.appendChild(cap);
-      track.appendChild(card);
+  // load alt gallery (carousel)
+  try{
+    const res2 = await fetch(altFile + '?t=' + Date.now(), {cache:'no-store'});
+    const items2 = await res2.json();
+    const carousel = document.getElementById('gallery-alt') || document.querySelector('.carousel');
+    if(carousel && items2 && items2.length){
+      carousel.innerHTML='';
+      // create duplicated sequence for seamless scroll
+      const seq = items2.slice(0,40); // limit to reasonable count
+      const build = (arr)=>{
+        arr.forEach(it=>{
+          const img = document.createElement('img');
+          img.src = it.url;
+          img.alt = it.title || it.description || 'pixPLace artwork';
+          img.loading = 'lazy';
+          carousel.appendChild(img);
+        });
+      };
+      build(seq); build(seq); // duplicate
+      // CSS animation handles scroll (set variable width)
     }
-
-    // Continuous auto scroll
-    let pos = 0;
-    function tick(){
-      pos += 0.25; // speed
-      const max = track.scrollWidth / 2; // we duplicated
-      if (pos >= max) pos = 0;
-      track.style.transform = `translateX(${-pos}px)`;
-      requestAnimationFrame(tick);
-    }
-    requestAnimationFrame(tick);
-  } catch(e){
-    console.error('Gallery load failed', e);
-  }
+  }catch(e){ console.warn('Alt gallery load failed', e); }
 }
-document.addEventListener('DOMContentLoaded', loadGallery);
+
+document.addEventListener('DOMContentLoaded', loadGalleries);
