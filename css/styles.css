@@ -1,0 +1,12 @@
+body {font-family: Arial, sans-serif; margin:0; padding:0; background:#fafafa; color:#222;}
+header {display:flex; justify-content:space-between; align-items:center; padding:10px 20px; background:#fff; box-shadow:0 2px 5px rgba(0,0,0,0.1);}
+h1 {font-size:1.5rem;}
+.btn-main, .btn-footer {display:inline-block; padding:10px 20px; margin:10px; background:#0078ff; color:#fff; border-radius:10px; text-decoration:none; transition:0.3s;}
+.btn-main:hover, .btn-footer:hover {background:#005fcc;}
+.masonry {column-count:3; column-gap:10px; padding:10px;}
+.masonry img {width:100%; margin-bottom:10px; border-radius:12px; border:2px solid rgba(0,0,0,0.05);}
+.carousel {display:flex; overflow-x:auto; gap:10px; padding:10px;}
+.carousel img {height:200px; border-radius:12px; border:2px solid rgba(0,0,0,0.05);} 
+#lang-menu {position:absolute; top:50px; right:20px; background:#fff; box-shadow:0 2px 5px rgba(0,0,0,0.1); list-style:none; padding:0; margin:0; display:none;}
+#lang-menu li {padding:8px 12px; cursor:pointer;}
+#lang-menu li:hover {background:#f0f0f0;}
