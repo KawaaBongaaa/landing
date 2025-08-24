@@ -40,18 +40,18 @@
   <div class="container">
     <nav class="nav">
       <a class="logo" href="index.html">pixPLace</a>
-      <div class="lang"><a href="index.html">EN</a><a href="ru.html">RU</a><a href="es.html">ES</a><a href="de.html">DE</a><a href="fr.html">FR</a><a href="it.html">IT</a><a href="pt.html">PT</a><a href="ja.html">JA</a><a href="zh.html">ZH</a></div>
+      <div class="lang"><button id="lang-btn" class="btn small">🌐</button><ul id="lang-menu" class="lang-menu hidden"></ul></div>
     </nav>
 
     <section class="hero">
       <div class="card copy">
-        <h1>Créez des visuels époustouflants avec l’IA</h1>
-        <p>Votre co‑pilote créatif pour générer, améliorer et remixer des visuels pour pub, design et art.</p>
+        <h1 data-i18n="hero_title">Créez des visuels époustouflants avec l’IA</h1>
+        <p data-i18n="hero_sub">Votre co‑pilote créatif pour générer, améliorer et remixer des visuels pour pub, design et art.</p>
         <div class="badges">
           <span>⚡ Diffusion</span><span>🔍 Upscaler</span><span>🧩 Inpaint</span><span>🧠 Prompts</span>
         </div>
         <div class="ctaRow">
-          <a id="stripeBtn" class="btn">Commencer gratuitement</a>
+          <a id="stripeBtn" class="btn" href="https://t.me/pixPLaceBot?start=landing-page-main-buton" target="_blank" data-i18n="get_started">Commencer gratuitement</a>
           <a class="btn secondary" href="#pricing">Voir les tarifs</a>
         </div>
       </div>
@@ -63,59 +63,68 @@
       </div>
     </section>
 
+    
+    
+    <section class="section" id="gallery-main">
+      <h2 data-i18n="gallery1">Gallery: To Print</h2>
+      <p class="lead">Print-ready artworks and mockups.</p>
+      <div id="gallery-grid" class="masonry-grid"></div>
+    </section>
+
     <section class="section" id="features">
-      <h2>Features</h2>
-      <p class="lead">Built for speed, quality and privacy.</p>
+      <h2 data-i18n="features">Features</h2>
+      <p class="lead">Built for speed, quality and privacy. Premium models and useful presets for creators.</p>
       <div class="grid">
-        <div class="tile"><strong>Diffusion & upscaler rapides</strong><br><span class="small">Latency‑optimized pipeline.</span></div>
-        <div class="tile"><strong>Confidentialité par défaut</strong><br><span class="small">We store nothing by default.</span></div>
-        <div class="tile"><strong>Sorties prêtes pour le commercial</strong><br><span class="small">Licensing that works for brands.</span></div>
+        <div class="tile"><strong>Diffusion</strong><br><span class="small">Fast, high‑quality generation</span></div>
+        <div class="tile"><strong>Upscaler</strong><br><span class="small">Super‑resolution & detail recovery</span></div>
+        <div class="tile"><strong>Inpaint</strong><br><span class="small">Seamless object removal & edits</span></div>
+        <div class="tile"><strong>Prompts & GPT Image</strong><br><span class="small">Text→Image and co‑pilot workflows</span></div>
+        <div class="tile"><strong>DALL·E 3</strong><br><span class="small">Creative synthesis and composition</span></div>
+        <div class="tile"><strong>Flux Kontext</strong><br><span class="small">Context aware style transfer</span></div>
+        <div class="tile"><strong>Presets</strong><br><span class="small">Sticker · Logo · Banner · Remove BG · T‑shirt Print</span></div>
       </div>
     </section>
 
+
     <section class="section" id="pricing">
-      <h2>Pricing</h2>
+      <h2 data-i18n="pricing">Pricing</h2>
       <div class="pricing">
         <div class="priceCard">
           <h3>Starter</h3>
           <div class="price">$0</div>
           <div class="small">50 images / mo</div>
           <hr class="sep">
-          <a id="stripeBtn" class="btn">Get Started</a>
+          <a class="btn" href="https://t.me/pixPLaceBot?start=landing-page-tarif-starter-buton" target="_blank">Get Started</a>
         </div>
         <div class="priceCard">
           <h3>Creator</h3>
           <div class="price">$19</div>
           <div class="small">1000 images / mo</div>
           <hr class="sep">
-          <a id="stripeBtn" class="btn">Subscribe</a>
+          <a class="btn" href="https://t.me/pixPLaceBot?start=landing-page-tarif-creator-buton" target="_blank">Subscribe</a>
         </div>
         <div class="priceCard">
           <h3>Studio</h3>
           <div class="price">$49</div>
           <div class="small">Unlimited personal</div>
           <hr class="sep">
-          <a id="stripeBtn" class="btn">Scale Up</a>
+          <a class="btn" href="https://t.me/pixPLaceBot?start=landing-page-tarif-studio-buton" target="_blank">Scale Up</a>
         </div>
       </div>
     </section>
 
-    <section class="section" id="lead">
-      <h2>Stay in the loop</h2>
-      <p class="lead">Leave your email or reach us on Telegram.</p>
-      <form id="leadForm" class="form">
-        <input class="input" type="email" name="email" placeholder="you@example.com" required>
-        <input class="input" type="text" name="telegram" placeholder="@username (optional)">
-        <div style="display:flex;gap:10px;align-items:center">
-          <button class="btn" type="submit">Notify me</button>
-          <a id="tgBtn" class="btn secondary" href="https://t.me/pixPLaceBot?start=landing-page-open-in-telegram-buton" target="_blank">Open Telegram</a>
-        </div>
-        <div class="small">By continuing you agree to our <a href="terms.html">Terms</a> and <a href="privacy.html">Privacy</a>.</div>
-      </form>
+    
+    <section class="section" id="gallery-second">
+      <h2 data-i18n="gallery2">Gallery: Stickers & Logos</h2>
+      <p class="lead">Curated stickers and logo ideas.</p>
+      <div id="gallery-alt" class="carousel"></div>
     </section>
+
 
     <footer class="footer">
       © 2025 pixPLace — All rights reserved.
+    
+      <div style="margin-top:12px;"><a class="btn-footer" href="https://t.me/pixPLaceBot?start=landing-page-open-in-telegram-buton" target="_blank" data-i18n="open_telegram">Open in Telegram</a></div>
     </footer>
   </div>
 
