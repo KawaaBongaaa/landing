@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', async ()=>{
       langMenu.appendChild(li);
     });
     langBtn.addEventListener('click', ()=>{
-      langMenu.style.display = langMenu.style.display === 'none' ? 'block' : 'none';
+      langMenu.style.display = langMenu.style.display === 'block' ? 'none' : 'block';
     });
   }
 });
