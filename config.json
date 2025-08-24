@@ -1,3 +1,26 @@
 {
-  "pinterestBoard": "https://www.pinterest.com/888k_ideas/sticker-logo-wallpaper-art-posters-clipart/"
+  "siteName": "pixPLace",
+  "defaultLang": "en",
+  "languages": [
+    "en",
+    "ru",
+    "es",
+    "de",
+    "fr",
+    "it",
+    "pt",
+    "ja",
+    "zh"
+  ],
+  "lead": {
+    "mailto": "hello@example.com",
+    "telegram": "https://t.me/your_username"
+  },
+  "stripe": {
+    "paymentLink": "https://buy.stripe.com/test_XXXXXXXXXXXX"
+  },
+  "gallery": {
+    "board": "https://www.pinterest.com/888k_ideas/sticker-logo-wallpaper-art-posters-clipart/",
+    "dataFile": "gallery.json"
+  }
 }

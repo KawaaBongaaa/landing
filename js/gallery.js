@@ -1,38 +1,66 @@
+
 async function loadGallery() {
-  const config = await fetch("config.json").then(r => r.json());
-  const boardUrl = config.pinterestBoard;
+  try {
+    const res = await fetch('gallery.json',{cache:'no-store'});
+    const items = await res.json();
+    const track = document.querySelector('.carouselTrack');
+    if (!track) return;
 
-  const carousel = document.getElementById("carousel");
+    // Shuffle for randomness
+    const shuffled = items.slice().sort(() => Math.random() - .5);
 
-  // ⚠️ Заглушка: В реальном режиме нужен Pinterest API или middleware
-  // Для демо вставляем пример изображений (замени на запрос к API)
-  const exampleImages = [
-    { url: "https://i.pinimg.com/564x/1f/5b/07/1f5b07.jpg", title: "AI Artwork 1" },
-    { url: "https://i.pinimg.com/564x/2d/6c/1e/2d6c1e.jpg", title: "AI Artwork 2" },
-    { url: "https://i.pinimg.com/564x/3e/8f/5a/3e8f5a.jpg", title: "AI Artwork 3" }
-  ];
-
-  exampleImages.forEach(img => {
-    const imageEl = document.createElement("img");
-    imageEl.src = img.url;
-    imageEl.alt = img.title;
-    imageEl.title = img.title;
-    carousel.appendChild(imageEl);
-  });
-
-  // Автопрокрутка
-  let scrollAmount = 0;
-  function autoScroll() {
-    scrollAmount += 1;
-    carousel.scrollTo({
-      left: scrollAmount,
-      behavior: "smooth"
-    });
-    if (scrollAmount >= carousel.scrollWidth - carousel.clientWidth) {
-      scrollAmount = 0;
+    // Build slides
+    for (const it of shuffled) {
+      const card = document.createElement('div');
+      card.className = 'carouselItem';
+      const img = document.createElement('img');
+      img.loading = 'lazy';
+      img.decoding = 'async';
+      img.src = it.url;
+      const title = it.title || '';
+      const desc = it.description || '';
+      img.alt = title || desc || 'pixPLace artwork';
+      img.title = title || desc || 'pixPLace artwork';
+      const cap = document.createElement('div');
+      cap.className = 'caption';
+      cap.textContent = title || desc || '';
+      card.appendChild(img);
+      card.appendChild(cap);
+      track.appendChild(card);
     }
-  }
-  setInterval(autoScroll, 50); // медленно крутится
-}
 
-document.addEventListener("DOMContentLoaded", loadGallery);
+    // Duplicate slides to ensure seamless infinite scroll
+    for (const it of shuffled) {
+      const card = document.createElement('div');
+      card.className = 'carouselItem';
+      const img = document.createElement('img');
+      img.loading = 'lazy';
+      img.decoding = 'async';
+      img.src = it.url;
+      const title = it.title || '';
+      const desc = it.description || '';
+      img.alt = title || desc || 'pixPLace artwork';
+      img.title = title || desc || 'pixPLace artwork';
+      const cap = document.createElement('div');
+      cap.className = 'caption';
+      cap.textContent = title || desc || '';
+      card.appendChild(img);
+      card.appendChild(cap);
+      track.appendChild(card);
+    }
+
+    // Continuous auto scroll
+    let pos = 0;
+    function tick(){
+      pos += 0.25; // speed
+      const max = track.scrollWidth / 2; // we duplicated
+      if (pos >= max) pos = 0;
+      track.style.transform = `translateX(${-pos}px)`;
+      requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  } catch(e){
+    console.error('Gallery load failed', e);
+  }
+}
+document.addEventListener('DOMContentLoaded', loadGallery);
