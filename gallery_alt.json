@@ -1,27 +1,44 @@
-[
-  {
-    "url": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200",
-    "title": "Neon Gradient Abstract",
-    "description": "Vibrant neon gradient AI artwork"
-  },
-  {
-    "url": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=1200",
-    "title": "Futuristic UI Panels",
-    "description": "Clean dashboard style composition"
-  },
-  {
-    "url": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200",
-    "title": "Synthwave City",
-    "description": "Retro‑futuristic skyline generated"
-  },
-  {
-    "url": "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=1200",
-    "title": "Cosmic Fabric",
-    "description": "Textile‑like abstract flow"
-  },
-  {
-    "url": "https://images.unsplash.com/photo-1527443154391-507e9dc6c5cc?q=80&w=1200",
-    "title": "Architectural Motion",
-    "description": "Parametric architecture blur"
-  }
-]
+{
+  "images": [
+    "https://picsum.photos/seed/41/800/600",
+    "https://picsum.photos/seed/42/800/600",
+    "https://picsum.photos/seed/43/800/600",
+    "https://picsum.photos/seed/44/800/600",
+    "https://picsum.photos/seed/45/800/600",
+    "https://picsum.photos/seed/46/800/600",
+    "https://picsum.photos/seed/47/800/600",
+    "https://picsum.photos/seed/48/800/600",
+    "https://picsum.photos/seed/49/800/600",
+    "https://picsum.photos/seed/50/800/600",
+    "https://picsum.photos/seed/51/800/600",
+    "https://picsum.photos/seed/52/800/600",
+    "https://picsum.photos/seed/53/800/600",
+    "https://picsum.photos/seed/54/800/600",
+    "https://picsum.photos/seed/55/800/600",
+    "https://picsum.photos/seed/56/800/600",
+    "https://picsum.photos/seed/57/800/600",
+    "https://picsum.photos/seed/58/800/600",
+    "https://picsum.photos/seed/59/800/600",
+    "https://picsum.photos/seed/60/800/600",
+    "https://picsum.photos/seed/61/800/600",
+    "https://picsum.photos/seed/62/800/600",
+    "https://picsum.photos/seed/63/800/600",
+    "https://picsum.photos/seed/64/800/600",
+    "https://picsum.photos/seed/65/800/600",
+    "https://picsum.photos/seed/66/800/600",
+    "https://picsum.photos/seed/67/800/600",
+    "https://picsum.photos/seed/68/800/600",
+    "https://picsum.photos/seed/69/800/600",
+    "https://picsum.photos/seed/70/800/600",
+    "https://picsum.photos/seed/71/800/600",
+    "https://picsum.photos/seed/72/800/600",
+    "https://picsum.photos/seed/73/800/600",
+    "https://picsum.photos/seed/74/800/600",
+    "https://picsum.photos/seed/75/800/600",
+    "https://picsum.photos/seed/76/800/600",
+    "https://picsum.photos/seed/77/800/600",
+    "https://picsum.photos/seed/78/800/600",
+    "https://picsum.photos/seed/79/800/600",
+    "https://picsum.photos/seed/80/800/600"
+  ]
+}
