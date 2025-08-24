@@ -44,7 +44,7 @@ html,body{margin:0;padding:0;background:var(--bg);color:#eef2ff;font-family:Inte
 @media(max-width:900px){.grid{grid-template-columns:1fr}}
 .tile{padding:18px;border-radius:var(--radius);background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.07)}
 
-.galleryWrap{position:relative;overflow:hidden;border-radius:var(--radius);border:1px solid rgba(255,255,255,.08)}
+.galleryWrap{position:relative;overflow:auto;border-radius:var(--radius);border:1px solid rgba(255,255,255,.08)}
 .carouselTrack{display:flex;gap:14px;will-change:transform;padding:14px}
 .carouselItem{flex:0 0 auto;width:300px;border-radius:16px;overflow:hidden;position:relative;background:#0f1117;border:1px solid rgba(255,255,255,.08)}
 .carouselItem img{display:block;width:100%;height:220px;object-fit:cover}
